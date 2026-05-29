@@ -50,6 +50,7 @@ ShieldBot/
 ├── ShieldBot.csproj            # .NET Project Configuration File
 ├── ShieldBot.sln               # Visual Studio Solution File
 └── README.md                   # Project Documentation & Harvard References
+
 🚀 How to Use
 Login: Enter your First Name and an Access Key. Click INITIALIZE to summon the bot.
 
