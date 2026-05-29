@@ -1,0 +1,60 @@
+﻿<Window x:Class="ShieldBotGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ShieldBot | Digital Guardian" Height="700" Width="480"
+        Background="#0A192F" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+
+	<Grid Margin="15">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<Border Grid.Row="0" Background="#112240" CornerRadius="10" Padding="10" Margin="0,0,0,10" BorderBrush="#FFD700" BorderThickness="0,0,0,1">
+			<Grid>
+				<StackPanel>
+					<TextBlock Text="🛡️ SHIELDBOT" Foreground="#FFD700" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+					<TextBlock Text="Cybersecurity Intelligence System" Foreground="White" Opacity="0.6" HorizontalAlignment="Center"/>
+				</StackPanel>
+				<Button Content="❓" HorizontalAlignment="Right" VerticalAlignment="Top" Background="Transparent" BorderThickness="0" Foreground="Cyan" FontSize="18" Cursor="Hand" Click="HelpButton_Click"/>
+			</Grid>
+		</Border>
+
+		<ListBox x:Name="ChatListBox" Grid.Row="1" Background="Transparent" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Border CornerRadius="12" Padding="12" Margin="5" Background="{Binding BubbleColor}" HorizontalAlignment="{Binding Align}">
+						<TextBlock Text="{Binding Text}" Foreground="White" TextWrapping="Wrap" MaxWidth="320"/>
+					</Border>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+
+		<Grid Grid.Row="2" Margin="0,10,0,0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+			<TextBox x:Name="InputTxt" Grid.Column="0" Background="#1D2D44" Foreground="White" BorderThickness="1" BorderBrush="#FFD700" Padding="10" VerticalContentAlignment="Center" KeyDown="InputTxt_KeyDown"/>
+			<Button Content="SEND" Grid.Column="1" Width="80" Margin="10,0,0,0" Background="#FFD700" Foreground="#0A192F" FontWeight="Bold" Click="SendBtn_Click"/>
+		</Grid>
+
+		<Grid x:Name="LoginOverlay" Grid.RowSpan="3" Background="#0A192F">
+			<Border Background="#112240" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="25" CornerRadius="15" BorderBrush="#FFD700" BorderThickness="1">
+				<StackPanel Width="360">
+					<TextBlock x:Name="AsciiLogoDisplay" FontFamily="Consolas" FontSize="8" Foreground="#FFD700" HorizontalAlignment="Center" Margin="0,0,0,10" TextWrapping="NoWrap"/>
+					<Border Background="#0A192F" Padding="10" CornerRadius="5" Margin="0,0,0,15" BorderBrush="Cyan" BorderThickness="1">
+						<TextBlock x:Name="LoginGuideDisplay" Foreground="Cyan" FontSize="11" FontFamily="Consolas" HorizontalAlignment="Center"/>
+					</Border>
+					<TextBlock Text="SECURE ACCESS INITIALIZATION" Foreground="#FFD700" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+					<TextBlock Text="👤 FIRST NAME" Foreground="#FFD700" FontSize="11" FontWeight="SemiBold" Margin="0,5,0,2"/>
+					<TextBox x:Name="LoginName" Background="#1D2D44" Foreground="White" BorderThickness="1" BorderBrush="Gray" Padding="8" Margin="0,0,0,15" VerticalContentAlignment="Center"/>
+					<TextBlock Text="🔑 ACCESS KEY" Foreground="#FFD700" FontSize="11" FontWeight="SemiBold" Margin="0,5,0,2"/>
+					<PasswordBox x:Name="LoginPass" Background="#1D2D44" Foreground="White" BorderThickness="1" BorderBrush="Gray" Padding="8" Margin="0,0,0,10" VerticalContentAlignment="Center"/>
+					<Button Content="INITIALIZE SHIELDBOT" Margin="0,25,0,0" Background="#FFD700" Foreground="#0A192F" Height="40" FontWeight="Bold" Cursor="Hand" Click="Login_Click"/>
+				</StackPanel>
+			</Border>
+		</Grid>
+	</Grid>
+</Window>
