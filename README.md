@@ -31,17 +31,25 @@ Defensive Programming: Comprehensive try-catch blocks protect multimedia and fil
 
 Relative Pathing: Implements AppDomain.CurrentDomain.BaseDirectory to ensure the Assets/ folder is located correctly across different deployment environments.
 
-📂 Folder Structure
-Plaintext
 ShieldBot/
+│
+├── .github/
+│   └── workflows/
+│       └── dotnet-ci.yml        # Automated CI/CD Build Workflow
+│
 ├── Assets/
-│   ├── greeting.wav         # Voice Greeting Asset
-│   └── logo.txt             # Updated ASCII Art Logo
-├── MainWindow.xaml          # WPF UI Layout (Navy/Gold/Black)
-├── MainWindow.xaml.cs       # UI Logic & Animation Controller
-├── ShieldBotEngine.cs       # Core Logic & Knowledge Base
-├── ShieldBot.csproj         # Project Configuration
-└── ShieldBot.sln            # Visual Studio Solution
+│   ├── greeting.wav            # Task 1: Voice Greeting Multimedia Asset
+│   └── logo.txt                # Task 1: Custom ASCII Art Branding
+│
+├── App.xaml                    # Application Entry Definition
+├── App.xaml.cs                 # Application Startup Logic
+├── AssemblyInfo.cs             # Project Metadata & Versioning
+├── MainWindow.xaml             # Task 1: WPF UI Layout (Navy, Gold, Black Theme)
+├── MainWindow.xaml.cs          # UI Logic, Multimedia Control & Animations
+├── ShieldBotEngine.cs          # Task 2-8: Logic Engine (Sentiment, Memory, Dictionaries)
+├── ShieldBot.csproj            # .NET Project Configuration File
+├── ShieldBot.sln               # Visual Studio Solution File
+└── README.md                   # Project Documentation & Harvard References
 🚀 How to Use
 Login: Enter your First Name and an Access Key. Click INITIALIZE to summon the bot.
 
