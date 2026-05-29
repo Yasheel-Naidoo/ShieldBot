@@ -31,7 +31,6 @@ Defensive Programming: Comprehensive try-catch blocks protect multimedia and fil
 
 Relative Pathing: Implements AppDomain.CurrentDomain.BaseDirectory to ensure the Assets/ folder is located correctly across different deployment environments.
 
-```plaintext
 ShieldBot/
 ├── .github/
 │   └── workflows/
